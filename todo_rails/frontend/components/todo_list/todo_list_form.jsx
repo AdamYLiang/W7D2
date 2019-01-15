@@ -10,10 +10,14 @@ class ToDoForm extends React.Component{
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
-        const todo = Object.assign({}, this.state, { id: uniqueId() });
-        this.props.receiveTodo(todo);
-        this.setState({ title: "", body: "" });
+        // const todo = Object.assign({}, this.state, { id: uniqueId() });
+        // this.props.receiveTodo(todo);
+        const todo = Object.assign({}, this.state);
+        this.props.createTodo({ todo }).then(
+            () => this.setState({ title: '', body: '' })
+        );
     }
 
     update(field) {
