@@ -1,7 +1,7 @@
 class Api::TodosController < ApplicationController 
     
     def index 
-        render json: Todo.all.where(user_id: current_user.id)
+        render json: Todo.all
     end
 
     def show
