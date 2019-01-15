@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from './store/store.js';
 import { receiveTodos, receiveTodo } from './actions/todo_actions.js';
-
-function Root() {
-    return (<h1>Hello</h1>);
-}
+import Root from './components/root.jsx';
 
 document.addEventListener('DOMContentLoaded', () => {
     window.store = store;
     window.receiveTodo = receiveTodo;
     window.receiveTodos = receiveTodos;
-    ReactDOM.render(<Root />, document.getElementById('root'));
+    ReactDOM.render(<Root store={store}/>, document.getElementById('root'));
 });
