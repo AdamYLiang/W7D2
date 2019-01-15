@@ -10,13 +10,15 @@ class ToDoForm extends React.Component{
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         // const todo = Object.assign({}, this.state, { id: uniqueId() });
         // this.props.receiveTodo(todo);
         const todo = Object.assign({}, this.state);
-        this.props.createTodo({ todo }).then(
-            () => this.setState({ title: '', body: '' })
+        this.props.createTodo(todo).then(
+            () => {
+                //cant seem to clear form
+                this.setState({ title: '', body: '' });
+            }
         );
     }
 

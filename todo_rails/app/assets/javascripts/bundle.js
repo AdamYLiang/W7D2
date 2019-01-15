@@ -249,15 +249,13 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      debugger;
       e.preventDefault(); // const todo = Object.assign({}, this.state, { id: uniqueId() });
       // this.props.receiveTodo(todo);
 
       var todo = Object.assign({}, this.state);
-      this.props.createTodo({
-        todo: todo
-      }).then(function () {
-        return _this2.setState({
+      this.props.createTodo(todo).then(function () {
+        //cant seem to clear form
+        _this2.setState({
           title: '',
           body: ''
         });
