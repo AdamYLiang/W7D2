@@ -1,7 +1,12 @@
 import React from 'react';
 
-function ToDoListItem(prop) {
-    return <li key={prop.id}>{prop.title}</li>
+class ToDoListItem extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return (<li>{this.props.todo.title}</li>)
+    }
 }
 
 export default ToDoListItem;
